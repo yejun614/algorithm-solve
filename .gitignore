@@ -1,0 +1,6 @@
+# Binary folder
+bin/
+
+# Input, Output
+*.in
+*.out

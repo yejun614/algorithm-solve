@@ -1,7 +1,7 @@
 # YEJUN's ALGORITHM SOLVE
 알고리즘 문제 풀이 저장소.
 
-<div style="height:340px; background: #333 url('./background.jpg') no-repeat center cover"></div>
+<img src="./background.jpg" height="300px" />
 
 ## :coffee: 문제풀이 사이트
 - [백준 온라인 저지](https://www.acmicpc.net/)

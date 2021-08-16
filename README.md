@@ -13,7 +13,7 @@
 - [ ] 2021 Dev-Matching: 웹 백엔드 개발자(상반기)
 	- [x] 로또의 최고 순위와 최저 순위 ([probrammers 77484](https://programmers.co.kr/learn/courses/30/lessons/77484))
 	- [x] 행렬 테두리 회전하기 ([programmers 77485](https://programmers.co.kr/learn/courses/30/lessons/77485))
-	- [ ] 다단계 칫솔 판매 ([programmers 77486](https://programmers.co.kr/learn/courses/30/lessons/77486))
+	- [x] 다단계 칫솔 판매 ([programmers 77486](https://programmers.co.kr/learn/courses/30/lessons/77486))
 	- [ ] 헤비 유저가 소유한 장소 ([programmers 77487](https://programmers.co.kr/learn/courses/30/lessons/77487))
 
 ## :construction: 어려워서 고민중인 문제들

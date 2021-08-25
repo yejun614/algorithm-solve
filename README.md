@@ -9,13 +9,9 @@
 - [프로그래머스](https://programmers.co.kr/learn/challenges)
 
 ## :rocket: 도전중인 문제들
-- [x] RGB거리 ([Baekjoon p1149](https://www.acmicpc.net/problem/1149))
-- [x] 2021 Dev-Matching: 웹 백엔드 개발자(상반기)
-	- [x] 로또의 최고 순위와 최저 순위 ([probrammers 77484](https://programmers.co.kr/learn/courses/30/lessons/77484))
-	- [x] 행렬 테두리 회전하기 ([programmers 77485](https://programmers.co.kr/learn/courses/30/lessons/77485))
-	- [x] 다단계 칫솔 판매 ([programmers 77486](https://programmers.co.kr/learn/courses/30/lessons/77486))
-	- [x] 헤비 유저가 소유한 장소 ([programmers 77487](https://programmers.co.kr/learn/courses/30/lessons/77487))
-
-## :construction: 어려워서 고민중인 문제들
 - [ ] 행렬 ([Baekjoon p1080](https://www.acmicpc.net/problem/1080))
 - [ ] Fly me to the Alpha Centauri ([Baekjoon p1011](https://www.acmicpc.net/problem/1011))
+- [ ] Summer/Winter Coding(2019)
+	- [ ] 멀쩡한 사각형 ([programmers 62048](https://programmers.co.kr/learn/courses/30/lessons/62048))
+	- [ ] 지형 이동 ([programmers 62050](https://programmers.co.kr/learn/courses/30/lessons/62050))
+	- [ ] 우유와 요거트가 담긴 장바구니 ([programmers 62284](https://programmers.co.kr/learn/courses/30/lessons/62284))

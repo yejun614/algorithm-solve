@@ -5,5 +5,3 @@ bin/
 *.in
 *.out
 
-# Github push script
-git-push.sh

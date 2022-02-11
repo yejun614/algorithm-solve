@@ -7,14 +7,6 @@ inline void swap(int *A, int *B) {
   *B = temp;
 }
 
-void print_arr(int *begin, int *end) {
-  while (begin < end) {
-    printf("%d ", *begin);
-    begin ++;
-  }
-  printf("\n");
-}
-
 void QuickSort(int *begin, int *end) {
   if (end - begin <= 0) return;
 

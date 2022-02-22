@@ -25,5 +25,4 @@ jobs:
     - run: echo ${PR_NUMBER}
 
     - name: Running Github Bot
-      if: env.IS_MANUAL == 'false'
-      run: cd ./tools/github-bot/ && go install . && go run main.go -m message.json -owner yejun614 -repo algorithm-solve -pr ${PR_NUMBER} -confirm false -sign true
+      run: cd ./tools/github-bot/ && go install . && go run main.go -m message.json -owner yejun614 -repo algorithm-solve -pr ${PR_NUMBER} -confirm=false -sign=true

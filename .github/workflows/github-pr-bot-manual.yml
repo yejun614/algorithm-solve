@@ -1,0 +1,33 @@
+name: Github Pull Requests Bot
+
+on:
+  workflow_dispatch:
+    inputs:
+      number:
+        description: 'Pull Request Number'
+        required: true
+        type: string
+    
+jobs:
+  Append-PR-Messages-Manual:
+    runs-on: ubuntu-latest
+
+    env:
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      PR_NUMBER: ${{ github.event.inputs.number }}
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Setup Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: '1.17'
+        
+    - run: go version
+    - run: echo ${PR_NUMBER}
+
+    - name: Running Github Bot
+      if: env.IS_MANUAL == 'false'
+      run: cd ./tools/github-bot/ && go install . && go run main.go -m message.json -owner yejun614 -repo algorithm-solve -pr ${PR_NUMBER} -confirm false -sign true

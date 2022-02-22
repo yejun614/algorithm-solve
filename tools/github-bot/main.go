@@ -297,19 +297,15 @@ func main() {
 	fmt.Println("[Repo   ]", *repoName)
 	fmt.Println("[PR Num ]", *prNum)
 
-	// TODO: 나중에 주석 해제.
 	// Get Github token from environment variable
-	/*
-	githubToken := os.Getenv("GITHUB_TOKEN")
+	githubToken := os.Getenv("ACCESS_TOKEN")
 
 	if githubToken == "" {
 		fmt.Println(" * There is no a Personal Access Token of Github.")
-		fmt.Println(" * Please enter the token in \"GITHUB_TOKEN\" a environment variable")
+		fmt.Println(" * Please enter the token in \"ACCESS_TOKEN\" a environment variable")
 
 		panic("Github Token Error")
 	}
-	*/
-	githubToken := "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"
 
 	// Get a message file
 	messages, err := GetMessage(*messageFileName)

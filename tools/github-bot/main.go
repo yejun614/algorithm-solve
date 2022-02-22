@@ -378,7 +378,7 @@ func main() {
 
 	// Confirm a updated pull request
 	isContinue := true
-	
+
 	if *isConfirm {
 		fmt.Println(" ---------- UPDATED ---------- ")
 		fmt.Println(*pr.Body)

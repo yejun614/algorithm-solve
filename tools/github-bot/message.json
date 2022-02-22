@@ -15,7 +15,7 @@
       "message": "[x] $File[1][12:]$ ([$FileName$]($File[2][3:]$))"
     },
     {
-      "path:" "notes/",
+      "path": "notes/",
       "title": "## 공부노트 추가",
       "target": ["\\\\*.cpp$", "\\\\*.py$", "\\\\*.md$"],
       "type": "list",

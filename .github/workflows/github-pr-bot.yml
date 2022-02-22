@@ -23,9 +23,6 @@ jobs:
         
     - run: go version
     - run: echo ${PR_NUMBER}
-    
-    - name: Move Directory
-      run: cd ./tools/github-bot/
 
     - name: Running Github Bot
-      run: go run main.go -m example.json -owner yejun614 -repo algorithm-solve -pr ${PR_NUMBER} -confirm false -sign true
+      run: cd ./tools/github-bot/ && go install . && go run main.go -m message.json -owner yejun614 -repo algorithm-solve -pr ${PR_NUMBER} -confirm false -sign true

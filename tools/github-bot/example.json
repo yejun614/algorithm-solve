@@ -1,0 +1,18 @@
+{
+  "messages": [
+    {
+      "path": "problems/baekjoon",
+      "title": "## 백준 문제풀이",
+      "target": ["\\\\*.cpp$", "\\\\*.py$"],
+      "type": "list",
+      "message": "[x] $File[1][12:]$ ([$FileName$]($File[2][3:]$))"
+    },
+    {
+      "path": "problems/programmers",
+      "title": "## 프로그래머스 문제풀이",
+      "target": ["\\\\*.cpp$", "\\\\*.py$"],
+      "type": "list",
+      "message": "[x] $File[1][12:]$ ([$FileName$]($File[2][3:]$))"
+    }
+  ]
+}

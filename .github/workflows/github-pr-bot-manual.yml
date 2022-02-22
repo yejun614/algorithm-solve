@@ -1,16 +1,20 @@
 name: Github Pull Requests Bot
 
 on:
-  pull_request:
-    types: [opened]
+  workflow_dispatch:
+    inputs:
+      number:
+        description: 'Pull Request Number'
+        required: true
+        type: string
     
 jobs:
-  Append-PR-Messages:
+  Append-PR-Messages-Manual:
     runs-on: ubuntu-latest
 
     env:
       ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-      PR_NUMBER: ${{ github.event.number }}
+      PR_NUMBER: ${{ github.event.inputs.number }}
 
     steps:
     - name: Checkout Repository

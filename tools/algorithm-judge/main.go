@@ -200,9 +200,10 @@ func FindDiffPos(A *string, B *string) (row int, col int) {
 			
 		} else if (*A)[index] == '\n' {
 			row ++
-			col = 1
+			col = 0
 		}
-	
+
+		col ++
 		index ++
 	}
 

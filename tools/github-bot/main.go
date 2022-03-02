@@ -353,28 +353,34 @@ func main() {
 	}
 
 	// Make messages
+	message := ""
 	texts, sizes := messages.GetFileMessages(prFiles)
-
-	// Edit pull request body texts
-	if pr.Body == nil {
-		blank := ""
-		pr.Body = &blank
-	}
 	
 	for key, text := range texts {
 		if sizes[key] == 0 {
 			continue
 		}
 
-		*pr.Body += "\n" + text
+		message += "\n" + text
 	}
 
 	// Append sign texts
-	if *isSign {
+	if *isSign && message != "" {
 		t := time.Now()
-		*pr.Body += "\nWritten by yejun614 github bot at "
-		*pr.Body += t.Format(time.RFC3339) + "\n"
+		message += "\nWritten by yejun614 github bot at "
+		message += t.Format(time.RFC3339) + "\n"
 	}
+	
+	// Edit pull request body texts
+	if pr.Body == nil {
+		blank := ""
+		pr.Body = &blank
+	}
+
+	*pr.Body += message
+
+	fmt.Println(" * Append messages length:", len(message))
+	fmt.Println(" * Total PR length:", len(*pr.Body))
 
 	// Confirm a updated pull request
 	isContinue := true

@@ -20,6 +20,13 @@
       "target": ["\\\\*.cpp$", "\\\\*.py$", "\\\\*.md$"],
       "type": "list",
       "message": "[x] $FullFileName$"
+    },
+    {
+      "path": "problems/csharp_baekjoon",
+      "title": "## 백준 문제풀이(C#)",
+      "target": ["\\\\*.cs$"],
+      "type": "list",
+      "message": "[x] $File[1][12:]$ ([$FileName$]($File[2][3:]$))"
     }
   ]
 }

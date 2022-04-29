@@ -27,6 +27,13 @@
       "target": ["\\\\*.cs$"],
       "type": "list",
       "message": "[x] $File[1][12:]$ ([$FileName$]($File[2][3:]$))"
+    },
+    {
+      "path": "problems/ascode",
+      "title": "## ASCODE 문제풀이",
+      "target": ["\\\\*.cpp$", "\\\\*.py$"],
+      "type": "list",
+      "message": "[x] $File[1][12:]$ ([$FileName$]($File[2][3:]$))"
     }
   ]
 }

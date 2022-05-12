@@ -1,6 +1,6 @@
 /*
- * (220512) http://www.ascode.org/problem.php?id=1227
- * 부분 수열의 최대값
+ * (220512) 부분 수열의 최대값
+ * http://www.ascode.org/problem.php?id=1227
  *
  * [풀이]
  * (1). 배열을 입력받은 후 (혹은 입력받으면서)

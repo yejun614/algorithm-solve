@@ -1,12 +1,9 @@
 /*
- * (220429) 소수 구하기 I
- * http://www.ascode.org/problem.php?id=1233
+ * (220517) 소수 구하기 III
+ * http://www.ascode.org/problem.php?id=1235
  *
  * [풀이]
  * N이 소수인지 판정하기 위해서 3부터 sqrt(N) 까지 검증하는 알고리즘
- *
- * [실수]
- * (+) 소수 판정 조건이 잘못되서 수정함. (220517)
  */
 
 #include <cstdio>
@@ -18,11 +15,17 @@ bool isPrime(int num) {
 
   int limit = sqrt(num);
 
-  for (int i = 3; i <= limit; i += 3) {
+  for (int i = 3; i <= limit; i += 2) {
     if (num % i == 0) return false;
   }
 
   return true;
+}
+
+void swap(int *a, int *b) {
+  int temp = *a;
+  *a = *b;
+  *b = temp;
 }
 
 int main() {
@@ -30,14 +33,18 @@ int main() {
   scanf("%d", &T);
 
   while (T--) {
-    scanf("%d", &num);
-    
-    if (isPrime(num)) {
-      printf("Prime\n");
-      
-    } else {
-      printf("Not Prime\n");
+    int a, b;
+    scanf("%d %d", &a, &b);
+
+    if (a > b) swap(&a, &b);
+
+    int count = 0;
+    for (int i = a; i <= b; i ++) {
+      if (isPrime(i)) count ++;
     }
+
+    printf("%d\n", count);
+
   }
 
   return 0;

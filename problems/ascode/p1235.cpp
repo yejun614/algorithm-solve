@@ -8,16 +8,19 @@
 
 #include <cstdio>
 #define MAX_VAL 100001
+#define LIMIT 316.2293471517152f  // sqrt(MAX_VAL)
 
 bool *Primes;
-void find_primes(int limit) {
+void find_primes(int max_value) {
   Primes[0] = false;
   Primes[1] = false;
-  for (int i = 2; i < limit; i ++) Primes[i] = true;
+  for (int i = 2; i < max_value; i ++) Primes[i] = true;
 
-  for (int i = 2; i < limit; i ++) {
+  double limit = LIMIT;
+
+  for (int i = 2; i <= limit; i ++) {
     if (!Primes[i]) continue;
-    for (int j = i * 2; j < limit; j += i) Primes[j] = false;
+    for (int j = i * i; j < max_value; j += i) Primes[j] = false;
   }
 }
 

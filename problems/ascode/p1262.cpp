@@ -1,5 +1,5 @@
 /*
- * 중복된 숫자 지우기
+ * (220524) 중복된 숫자 지우기
  * http://www.ascode.org/problem.php?id=1262
  *
  * [풀이]

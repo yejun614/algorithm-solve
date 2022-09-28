@@ -1,6 +1,6 @@
 /*
- * (220926) https://www.acmicpc.net/problem/23246
- * Sport Climbing Combined
+ * (220926) Sport Climbing Combined
+ * https://www.acmicpc.net/problem/23246
  *
  * [풀이]
  * 정렬하는 문제이다. 문제에서 제시된 조건을 자세히 읽어보고,

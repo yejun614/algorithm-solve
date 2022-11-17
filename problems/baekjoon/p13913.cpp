@@ -1,53 +1,53 @@
+/*
+ * (221117) 숨바꼭질 4
+ * https://www.acmicpc.net/problem/13913
+ *
+ * [풀이]
+ * 숨바꼭질(p1697) 문제에서 이어지는 내용이다.
+ * 수빈이가 동생에게 최소시간으로 가는 과정을 출력하는 게 핵심이다.
+ *
+ * 단순히 Memory가 갱신될 때 마다 해당 index의 PrevPosition에 현재
+ * 위치를 기록하고, 탐색이 종료된 후 동생의 위치에서 수빈이의 위치까지
+ * PrevPosition를 따라서 리스트를 만들어 마지막에 출력한다.
+ */
+
 #include <cstdio>
 #include <queue>
 #include <list>
-
 using namespace std;
 
 #define SIZE 200001
-
 int Memory[SIZE];
 int PrevPosition[SIZE];
-
-void ResetMemory() {
-  for (int i = 0; i < SIZE; i++) {
-    Memory[i] = SIZE; // assign infinite
-    PrevPosition[i] = -1;
-  }
-}
 
 int main() {
   int N, K;
   scanf("%d %d", &N, &K);
 
-  // N < K 조건을 만족 하도록 함
-  // if (K < N) {
-  //   // swap
-  //   int temp = N;
-  //   N = K;
-  //   K = temp;
-  // }
+  // Reset memory
+  for (int i = 0; i < SIZE; i++) {
+    Memory[i] = SIZE; // assign infinite
+    PrevPosition[i] = -1;
+  }
 
-  // N의 위치를 0으로 고정
-  // K -= N;
-
-  ResetMemory();
+  // Start position is zero
   Memory[N] = 0;
 
   queue<int> positions;
   positions.push(N);
 
   while (Memory[K] == SIZE) {
-  // for (int n = 0; n < SIZE; n++) {
     int size = positions.size();
 
     for (int i = 0; i < size; i++) {
+      // Get current position
       int position = positions.front();
       positions.pop();
-      if (position < 0 || position >= SIZE) continue;  // EXCEPTION!
 
-      // printf("%d\n", position);
+      // EXCEPTION!
+      if (position < 0 || position >= SIZE) continue;
 
+      // Next positions
       if (position < K && Memory[position*2] > Memory[position]+1) {
         Memory[position*2] = Memory[position]+1;
         positions.push(position*2);
@@ -66,26 +66,12 @@ int main() {
         PrevPosition[position+1] = position;
       }
     }
-
-    // printf("[] ");
-    // for (int i = 0; i < 2*K; i++) {
-    //   printf("%6d ", Memory[i]);
-    // }
-    // printf("\n");
   }
 
+  // Print answer
   printf("%d\n", Memory[K]);
 
-
-  // for (int i = 0; i < K*2; i++) {
-  //   printf("%2d ", i);
-  // }
-  // printf("\n");
-  // for (int i = 0; i < K*2; i++) {
-  //   printf("%2d ", PrevPosition[i]);
-  // }
-  // printf("\n");
-
+  // Get route of the way to brother
   list<int> route;
 
   int current = K;
@@ -96,6 +82,7 @@ int main() {
     route.push_front(current);
   }
 
+  // Print route
   for (int position : route) {
     printf("%d ", position);
   }

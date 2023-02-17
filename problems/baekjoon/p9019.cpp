@@ -26,7 +26,7 @@ typedef struct Node {
 } Node;
 
 queue<Node> Nodes;
-vector<int> Visited(10000);
+vector<bool> Visited(10000);
 
 void Push(int num, const string& cmd) {
   if (Visited[num]) return;

@@ -3,21 +3,21 @@
     {
       "path": "problems/baekjoon",
       "title": "## 백준 문제풀이",
-      "target": ["\\\\*.cpp$", "\\\\*.py$"],
+      "target": ["\\\\*.c$", "\\\\*.cpp$", "\\\\*.py$"],
       "type": "list",
       "message": "[x] $File[1][12:]$ ([$FileName$]($File[2][3:]$))"
     },
     {
       "path": "problems/programmers",
       "title": "## 프로그래머스 문제풀이",
-      "target": ["\\\\*.cpp$", "\\\\*.py$"],
+      "target": ["\\\\*.c$", "\\\\*.cpp$", "\\\\*.py$"],
       "type": "list",
       "message": "[x] $File[1][12:]$ ([$FileName$]($File[2][3:]$))"
     },
     {
       "path": "notes/",
       "title": "## 공부노트 추가",
-      "target": ["\\\\*.cpp$", "\\\\*.py$", "\\\\*.md$"],
+      "target": ["\\\\*.c$", "\\\\*.cpp$", "\\\\*.py$", "\\\\*.md$"],
       "type": "list",
       "message": "[x] $FullFileName$"
     },
@@ -31,7 +31,7 @@
     {
       "path": "problems/ascode",
       "title": "## ASCODE 문제풀이",
-      "target": ["\\\\*.cpp$", "\\\\*.py$"],
+      "target": ["\\\\*.c$", "\\\\*.cpp$", "\\\\*.py$"],
       "type": "list",
       "message": "[x] $File[1][12:]$ ([$FileName$]($File[2][3:]$))"
     }

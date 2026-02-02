@@ -41,6 +41,13 @@
       "target": ["\\\\*.c$", "\\\\*.cpp$", "\\\\*.py$"],
       "type": "list",
       "message": "[x] $File[1][12:]$ ([$FileName$]($File[2][3:]$))"
+    },
+    {
+      "path": "problems/SWEA",
+      "title": "## ASCODE 문제풀이",
+      "target": ["\\\\*.java$"],
+      "type": "list",
+      "message": "[x] $File[1][11:]$ ([$File[1][4:]$]($File[2][3:]$))"
     }
   ]
 }

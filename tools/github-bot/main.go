@@ -99,7 +99,6 @@ func IsMatchFileName(arr []string, target string) bool {
 		}
 	}
 
-	fmt.Println(arr)
 	return false
 }
 

@@ -26,7 +26,7 @@ import java.util.Queue;
  * @see #Solution(int)
  * 4. 멤버 변수를 초기화 한다.
  * 
- * @see #solve()
+ * @see #run()
  * 5. 입력, 해결, 출력 순서로 실행한다.
  * 
  * @see #input()

@@ -15,6 +15,13 @@
       "message": "[x] $File[1][12:]$ ([$FileName$]($File[2][3:]$))"
     },
     {
+      "path": "problems/programmers",
+      "title": "## 프로그래머스 문제풀이(Java)",
+      "target": ["\\\\*.java$"],
+      "type": "list",
+      "message": "[x] $File[1][11:]$ ([$File[1][4:]$]($File[2][3:]$))"
+    },
+    {
       "path": "notes/",
       "title": "## 공부노트 추가",
       "target": ["\\\\*.c$", "\\\\*.cpp$", "\\\\*.py$", "\\\\*.md$"],

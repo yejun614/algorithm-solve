@@ -123,8 +123,10 @@ func (messages *Messages) GetSingleFileMessage(file *github.CommitFile, data []b
 		diff := 0
 
 		r, _ := regexp.Compile(`\$(.*?)\$`)
-		commands := r.FindAllString(message.Message, -1)
-		locations := r.FindAllStringIndex(message.Message, -1)
+		// commands := r.FindAllString(message.Message, -1)
+		// locations := r.FindAllStringIndex(message.Message, -1)
+		commands := r.FindAllString(result, -1)
+		locations := r.FindAllStringIndex(result, -1)
 
 		r2, _ := regexp.Compile(`\[(.*?)\]`)
 
@@ -211,11 +213,47 @@ func (messages *Messages) GetSingleFileMessage(file *github.CommitFile, data []b
 			} else if command == "FileExt" {
 				commandResult = fileNames[1]
 				
+			} else if command == "Brakets" {
+				r, _ := regexp.Compile(`\(.*?\)|\[.*?\]|\{.*?\}`)
+				brakets := r.FindAllString(fileData, -1)
+
+				if (commandIndexValueLen == 0) {
+					commandResult = brakets[0]
+					
+				} else if (commandIndexValueLen == 1) {
+					index := commandIndexValue[0][0]
+					commandResult = brakets[index]
+
+				} else {
+					panic("Wrong Command Index Values: " + commands[index])
+				}
+
+				if commandResult != "" {
+					// remove brakets from commandResult
+					commandResult = commandResult[1:len(commandResult) - 1]
+				}
+
+			} else if command == "Url" {
+				r, _ := regexp.Compile(`http://.*|https://.*`)
+				urls := r.FindAllString(fileData, -1)
+
+				if (commandIndexValueLen == 0) {
+					commandResult = urls[0]
+					
+				} else if (commandIndexValueLen == 1) {
+					index := commandIndexValue[0][0]
+					commandResult = urls[index]
+
+				} else {
+					panic("Wrong Command Index Values: " + commands[index])
+				}
+
 			}
+
+			commandResult = strings.TrimSpace(commandResult)
 
 			startLoc := locations[index][0] + diff
 			endLoc := locations[index][1] + diff
-
 			result = result[:startLoc] + commandResult + result[endLoc:]
 
 			diff += len(commandResult) - len(commands[index])

@@ -44,7 +44,7 @@
     },
     {
       "path": "problems/SWEA",
-      "title": "## SW Expert Academy 문제풀이",
+      "title": "## ASCODE 문제풀이",
       "target": ["\\\\*.java$"],
       "type": "list",
       "message": "[x] $File[1][11:]$ ([$File[1][4:]$]($File[2][3:]$))"

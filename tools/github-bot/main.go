@@ -242,13 +242,15 @@ func (messages *Messages) GetFileMessages(commitFiles []*github.CommitFile) ([]s
 	}
 
 	for _, file := range commitFiles {
-		fmt.Println(" + FILE:", *file.Filename)
-	
 		data := GetGithubFileRaw(file)
 		str, key := messages.GetSingleFileMessage(file, data)
 
+		fmt.Printf(" + FILE: %s", *file.Filename)
 		if key == -1 {
+			fmt.Println()
 			continue
+		} else {
+			fmt.Println(" (MATCHED)")
 		}
 		
 		texts[key] += str + "\n"

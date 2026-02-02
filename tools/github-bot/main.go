@@ -242,6 +242,8 @@ func (messages *Messages) GetFileMessages(commitFiles []*github.CommitFile) ([]s
 	}
 
 	for _, file := range commitFiles {
+		fmt.Println(" + FILE:", *file.Filename)
+	
 		data := GetGithubFileRaw(file)
 		str, key := messages.GetSingleFileMessage(file, data)
 

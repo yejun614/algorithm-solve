@@ -5,3 +5,5 @@ bin/
 *.in
 *.out
 
+# OS
+.DS_Store

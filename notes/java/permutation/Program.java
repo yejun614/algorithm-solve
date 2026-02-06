@@ -36,7 +36,7 @@ public class Program {
 		for (int i = 0; i < 3; i++) {
 			if (isSelected[i]) continue;
 			
-			numbers[cnt] = i;
+			numbers[cnt] = i + 1;
 			isSelected[i] = true;
 			
 			permutation(cnt + 1);

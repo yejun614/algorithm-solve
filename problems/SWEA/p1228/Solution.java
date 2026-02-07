@@ -17,7 +17,7 @@ import java.util.StringTokenizer;
 
 /**
  * SW Expert Academy - 1228. [S/W 문제해결 기본] 8일차 - 암호문1
- * @author YeJun. Jung
+ * @author YeJun, Jung
  *
  * @see #main(String[])
  * 1. 입출력을 초기화한다.

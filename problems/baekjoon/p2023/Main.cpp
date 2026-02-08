@@ -1,3 +1,9 @@
+/*
+ * (2023) 신기한 소수
+ * https://www.acmicpc.net/problem/2023
+ */
+
+
 #include <cstdio>
 #include <cmath>
 using namespace std;

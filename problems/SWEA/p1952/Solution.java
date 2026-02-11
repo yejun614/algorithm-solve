@@ -1,4 +1,7 @@
-package swea.p1952;
+/*
+ * {풀이 하는 중} (1952) [모의 SW 역량테스트] 수영장
+ * https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PpFQaAQMDFAUq&categoryId=AV5PpFQaAQMDFAUq&categoryType=CODE&problemTitle=1952&orderBy=FIRST_REG_DATETIME&selectCodeLang=ALL&select-1=&pageSize=10&pageIndex=1
+ */
 
 import java.io.*;
 import java.util.*;
@@ -75,23 +78,38 @@ public class Solution {
 		
 		oneDayTicketArr = new int[MONTH_LEN];
 		monthTicketArr = new boolean[MONTH_LEN];
-		
+
+		offset = bestPrice * 2;
+		cache = new boolean[13 * offset];
+
 		searchBestPrice(0, 0);
 	}
+
+	int offset;
+	boolean[] cache;
 	
 	private void searchBestPrice(int month, int currentPrice) {
+		if (month > MONTH_LEN || currentPrice >= bestPrice) return;
+
+		int cacheKey = month * offset + currentPrice;
+		// System.out.printf("searchBestPrice(%d, %d)\n", month, currentPrice);
+		if (cache[cacheKey]) return;
+		cache[cacheKey] = true;
+
 		while ( (month < MONTH_LEN) &&
-				(oneDayTicketArr[month] >= planArr[month])
+				(monthTicketArr[month] || oneDayTicketArr[month] >= planArr[month])
 		) {
-			System.out.println("WOW");
 			month++;
 		}
 		
 		// 기저조건
 		if (month >= MONTH_LEN) {
 			if (currentPrice < bestPrice) bestPrice = currentPrice;
+			cache[cacheKey] = true;
 			return;
 		}
+
+		// System.out.printf("[%d] searchBestPrice(%d, %d)\n", testCase, month, currentPrice);
 		
 		int price;
 		
@@ -122,6 +140,8 @@ public class Solution {
 			searchBestPrice(month + 3, price);
 			for (int m = month; m < month + 2 && m < MONTH_LEN; m++) monthTicketArr[m] = false;
 		}
+
+		cache[cacheKey] = true;
 	}
 	
 	private void print() throws IOException {

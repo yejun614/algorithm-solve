@@ -1,6 +1,9 @@
 # Input, Output
 *.in
 *.out
+input.txt
+output.txt
+answer.txt
 
 ### Eclipse ###
 .metadata

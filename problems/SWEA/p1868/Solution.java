@@ -76,13 +76,7 @@ public class Solution {
   private void solve() {
     answer = 0;
 
-    p1();
-  }
-
-  private void p1() {
     makeParentArr();
-
-    // System.out.printf("[%d]\n", testCase);
 
     for (int y = 0; y < boardSize; y++) {
       for (int x = 0; x < boardSize; x++) {
@@ -97,15 +91,6 @@ public class Solution {
         openTile(x, y, id);
       }
     }
-
-    // System.out.println("------------------------------");
-    // for (int y = 0; y < boardSize; y++) {
-    //   for (int x = 0; x < boardSize; x++) {
-    //     System.out.printf("%3d ", board[y][x]);
-    //   }
-    //   System.out.println();
-    // }
-    // System.out.println(Arrays.toString(parentArr));
 
     updateAnswer();
   }
@@ -141,7 +126,6 @@ public class Solution {
       if (board[ny][nx] == -1) cnt++;
     }
 
-    // System.out.printf("%d, %d : %d (%d)\n", x, y, cnt, id);
     if (cnt != 0) return;
 
     for (int dir = 0; dir < DIR_LEN; dir++) {

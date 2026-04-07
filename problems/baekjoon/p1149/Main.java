@@ -7,7 +7,7 @@ import java.io.*;
 import java.util.*;
 
 /**
- * SW Expert Academy - RGB거리
+ * Baekjoon - RGB거리
  * @author YeJun, Jung
  * 
  * [분석]

@@ -7,7 +7,7 @@ import java.io.*;
 import java.util.*;
 
 /**
- * SW Expert Academy - 1로 만들기
+ * Baekjoon - 1로 만들기
  * @author YeJun, Jung
  * 
  * [분석]
